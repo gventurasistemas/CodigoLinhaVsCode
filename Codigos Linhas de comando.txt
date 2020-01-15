@@ -1,0 +1,117 @@
+Referencias
+https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet?tabs=netcore21
+
+
+//Cria pasta Aula1
+cd mkdir Aula1
+
+//Cria um novo projeto do tipo console
+dotnet new console
+
+//Cria uma aplicação Web
+dotnet new mvc -n Aula6 
+
+//Cria uma aplicação Web API
+dotnet new webapi -n ProjetoWebApi
+
+//Cria uma aplicação Angula com Web
+dotnet new angular -o nomeDoProjeto
+
+//Cria uma nova solução
+dotnet new sln
+
+//Cria um projeto com uma aplicação Mvc
+dotnet new mvc -o nomeDoProjeto
+
+//Cria o arquivo Mvc.csproj
+dotnet sln add. ./nomeDaPasta/Mvc.csproj
+
+//Cria um novo projeto do tipo Classlibrary
+dotnet new classlib -o nomeDoProjetoClasse
+
+//Cria um novo projeto do tipo Classlibrary
+dotnet new classlib --name StoreofBuild.Domain
+
+//Cria um novo projeto do tipo Classlibrary Api.Domain com netcoreapp2.2 (-n = name, -f framework, -o out ou seja saida)
+dotnet new classlib -n Domain -f netcoreapp2.2 -o Api.Domain
+
+//Adiciona o projeto a solução
+dotnet sln add ./Projeto/Arquivo.csproj
+dotnet sln add src/StoreofBuild.Domain/StoreofBuild.Domain.csproj
+dotnet sln add Api.Application\
+
+//Visualiza diversos comandos do DotNet
+dotnet new --help
+
+//Abre o projeto no Visual Code
+code .
+
+//Rodar o projeto
+dotnet run
+
+//Restaura todas as dependencias do projeto
+dotnet restore
+
+//Compilar o projeto
+dotnet build
+
+//Rodar o projeto, caso alterar o codigo, ele atualiza automaticamente
+dotnet watch run
+
+//Criando um projeto Mvc com conta individual usando o Identity
+dotnet new mvc --auth individual --use-local-db
+
+
+//Quando rodar o projeto vai aparecer algo semelhante as linhas abaixo
+//Observe a URL que esta abaixo, copie e cole no navegador
+Hosting environment: Production
+Content root path: /home/gelson/AspNetCoreCurso/Aula2/bin/Debug/netcoreapp3.0/
+Now listening on: http://localhost:5000
+Now listening on: https://localhost:5001
+Application started. Press Ctrl+C to shut down.
+^Cwatch : Shutdown requested. Press Ctrl+C again to force exit.
+
+//Para a aplicação
+Ctrl+C
+
+
+////////////////////////////////////////////////////MUDANDO VERSÃO DO SDK///////////////////////////////////////////////////////
+
+A instrução dotnet --list-sdks trará as diferentes versões de SDKs do .NET Core instaladas em uma máquina
+dotnet --list-sdks
+
+Com o comando dotnet new globaljson --sdk-version 2.2.100 será gerado um global.json configurado para uso do SDK 2.2.100
+
+dotnet new globaljson --sdk-version X.X.XXX
+
+Depois é só criar o projeto
+//Cria uma aplicação Web API
+dotnet new webapi -n ProjetoWebApi
+
+
+
+
+////////////////////////////////////////////////////ADICIONANDO PACOTES///////////////////////////////////////////////////////
+
+dotnet add package Microsoft.AspNetCore.App
+
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore --version 2.1.3
+
+
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 2.1.3
+
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 2.1.3
+
+
+
+//Referenciando outro projeto (Classlibrary)
+dotnet add reference ../Dominio/Dominio.csproj
+
+
+
+
+
+
